@@ -21,7 +21,7 @@ const personas = [
 
 let ingreso = 0;
 
-function caso1() {
+function crear_persona() {
     let id = personas.length + 1;
     let nombre = prompt('Ingrese el nombre');
     let apellido = prompt('Ingrese el apellido');
@@ -39,7 +39,10 @@ do {
     ingreso = parseInt(prompt('Bienvenido. Que desea realizar: \n 1- Agregar Persona \n 2- Ver lista de personas \n 3- Salir'));
     switch (ingreso) {
         case 1: {
-            caso1(1);
+            crear_persona(1);
+            break;
+        };
+        case 2:
             const ordenar_por_edad = personas.sort((persona1,persona2) =>{
                 if(persona1.edad > persona2.edad){
                     return 1;
@@ -51,9 +54,6 @@ do {
                     return 0;
                 }
             });
-            break;
-        };
-        case 2:
             console.log(personas);
             break;
         case 3: console.log('Muchas gracias por utilizar el simulador');
